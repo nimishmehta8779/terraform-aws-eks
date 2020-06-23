@@ -1,5 +1,5 @@
 variable "region" {
-  default = "us-west-2"
+  default = "us-east-1"
 }
 
 variable "map_accounts" {
@@ -10,6 +10,20 @@ variable "map_accounts" {
     "777777777777",
     "888888888888",
   ]
+}
+
+variable "cluster_zone" {
+}
+
+variable "cluster_zone_id" {
+}
+
+variable "letsencrypt_production" {
+  
+}
+
+variable "cluster_name" {
+	type = string
 }
 
 variable "map_roles" {

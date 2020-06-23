@@ -1,0 +1,11 @@
+cloudProvider: aws
+awsRegion: us-east-1
+
+rbac:
+  create: true
+
+sslCertPath: /etc/ssl/certs/ca-bundle.crt
+
+autoDiscovery:
+  clusterName: myekscluster
+  enabled: true
