@@ -9,10 +9,10 @@ phases:
 
   build:
     commands:
-#      - cd "$CODEBUILD_SRC_DIR"/examples/basic
+      - cd "$CODEBUILD_SRC_DIR"/examples/basic
       - terraform init
-      - terraform plan -out=plan.tfplan > /dev/null && terraform show -json plan.tfplan
-      - terraform plan -out=terraform.out
+#      - terraform plan -out=plan.tfplan > /dev/null && terraform show -json plan.tfplan
+#      - terraform plan -out=terraform.out
 post_build:
     commands:
 #      - terraform apply -auto-approve
