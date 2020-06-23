@@ -1,0 +1,23 @@
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - "cd /usr/bin"
+      - "curl -O https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip"
+      - "unzip terraform_0.12.7_linux_amd64.zip"
+
+  build:
+    commands:
+      - cd "$CODEBUILD_SRC_DIR"/examples/basic
+      - terraform init
+      - terraform plan -out=plan.tfplan > /dev/null && terraform show -json plan.tfplan
+      - terraform plan -out=terraform.out
+post_build:
+    commands:
+#      - terraform apply -auto-approve
+      - echo "Terraform completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
